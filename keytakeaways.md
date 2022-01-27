@@ -1,2 +1,2 @@
-1. Flex box froggy for learning Flex box
-2. User `heroicons.com` for latest icons
+1. Froggy Flex box `https://flexboxfroggy.com/` for learning Flex box.
+2. Use `heroicons.com` for latest icons.
