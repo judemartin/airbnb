@@ -6,6 +6,7 @@ import SmallCard from "../components/SmallCard";
 import MediumCard from "../components/MediumCard";
 import styles from "../styles/Home.module.css";
 import LargeCard from "../components/LargeCard";
+import Footer from "../components/Footer";
 
 export default function Home({ exploreData, cardsData }) {
   console.debug(exploreData);
@@ -48,6 +49,7 @@ export default function Home({ exploreData, cardsData }) {
           description="Wishlists curated by Airbnb."
           buttonText="Get inspired"
         />
+        <Footer />
       </main>
     </div>
   );
