@@ -1,16 +1,17 @@
-import { useRouter } from "next/dist/client/router";
-import React from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import InfoCard from "../components/InfoCard";
-import { format } from "date-fns";
+import { useRouter } from 'next/dist/client/router';
+import React from 'react';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import InfoCard from '../components/InfoCard';
+import { format } from 'date-fns';
+import Map from '../components/Map';
 function Search({ searchResults }) {
   const router = useRouter();
   console.log(searchResults);
   //ES 6 destructing
   const { location, startDate, endDate, noOfGuests } = router.query;
-  const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
-  const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
+  const formattedStartDate = format(new Date(startDate), 'dd MMMM yy');
+  const formattedEndDate = format(new Date(endDate), 'dd MMMM yy');
   const range = `${formattedStartDate} - ${formattedEndDate}`;
   return (
     <div>
@@ -47,6 +48,9 @@ function Search({ searchResults }) {
             )}
           </div>
         </section>
+        <section className="hidden xl:inline-flex xl:min-w-[600px]">
+          <Map searchResults={searchResults} />
+        </section>
       </main>
       <Footer />
     </div>
@@ -56,7 +60,7 @@ function Search({ searchResults }) {
 export default Search;
 
 export async function getServerSideProps() {
-  const searchResults = await fetch("https://links.papareact.com/isz").then(
+  const searchResults = await fetch('https://links.papareact.com/isz').then(
     (res) => res.json()
   );
   console.log(searchResults);

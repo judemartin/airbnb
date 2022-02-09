@@ -18,3 +18,5 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 1. CSS `TailwindCSS`
 2. Icons `heroicons`
+3. Maps `MapBox`
+4. Distance `GeoLib`
